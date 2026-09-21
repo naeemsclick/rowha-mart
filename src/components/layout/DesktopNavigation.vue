@@ -83,22 +83,32 @@ function isActive(link: string): boolean {
   display: flex;
   align-items: center;
   gap: 5px;
-  padding: 6px 13px;
-  font-size: 0.85rem;
+  padding: 8px 0;
+  font-size: 0.9rem;
   font-weight: 600;
   color: var(--color-charcoal);
   white-space: nowrap;
-  transition: all 0.25s ease;
-  background: rgba(78, 133, 109, 0.07);
-  border: 1px solid rgba(78, 133, 109, 0.18);
-  border-radius: 8px;
+  transition: var(--transition-fast);
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2.5px;
+    background-color: var(--color-accent);
+    border-radius: 2px;
+    transition: var(--transition-fast);
+  }
 
   &:hover, &.active {
-    color: var(--color-white);
-    background: var(--color-primary);
-    border-color: var(--color-primary);
-    box-shadow: 0 4px 12px rgba(78, 133, 109, 0.3);
-    transform: translateY(-1px);
+    color: var(--color-primary-dark);
+
+    &::after {
+      width: 100%;
+    }
   }
 }
 

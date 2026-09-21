@@ -30,8 +30,8 @@ useSeo({
       <div class="story-content-grid">
         <div class="image-box">
           <img
-            src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80"
-            alt="Rowha Mart Studio"
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
+            alt="Rowha Mart Corporate Headquarters Office"
           />
         </div>
 

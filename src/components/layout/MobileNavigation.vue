@@ -32,7 +32,7 @@ function close() {
           <p>{{ localeStore.t('announcement.slogan') }}</p>
         </div>
 
-        <!-- Content -->
+        <!-- Scrollable Content -->
         <div class="drawer-content">
           <!-- Language Switcher Option in Mobile -->
           <div class="mobile-lang-switcher">
@@ -60,16 +60,16 @@ function close() {
 
           <!-- Main Nav Links -->
           <div class="nav-group">
-            <h4 class="group-title">Navigation</h4>
+            <h4 class="group-title">Navigation Menu</h4>
             <ul class="nav-links">
               <li><router-link to="/" @click="close">{{ localeStore.t('nav.home') }}</router-link></li>
               <li><router-link to="/shop" @click="close">{{ localeStore.t('nav.shop') }}</router-link></li>
               <li><router-link to="/category/fashion" @click="close">{{ localeStore.t('nav.fashion') }}</router-link></li>
               <li><router-link to="/category/gadgets" @click="close">{{ localeStore.t('nav.gadgets') }}</router-link></li>
               <li><router-link to="/category/beauty" @click="close">{{ localeStore.t('nav.beauty') }}</router-link></li>
-              <li><router-link to="/shop?sortBy=newest" @click="close">{{ localeStore.t('nav.newArrivals') }}</router-link></li>
-              <li><router-link to="/offers" @click="close">{{ localeStore.t('nav.offers') }}</router-link></li>
-              <li><router-link to="/track-order" @click="close">{{ localeStore.t('announcement.trackOrder') }}</router-link></li>
+              <li><router-link to="/shop?sortBy=newest" @click="close">✨ {{ localeStore.t('nav.newArrivals') }}</router-link></li>
+              <li><router-link to="/offers" @click="close">🔥 {{ localeStore.t('nav.offers') }}</router-link></li>
+              <li><router-link to="/track-order" @click="close">📦 {{ localeStore.t('announcement.trackOrder') }}</router-link></li>
               <li><router-link to="/about" @click="close">{{ localeStore.t('nav.about') }}</router-link></li>
               <li><router-link to="/contact" @click="close">{{ localeStore.t('nav.contact') }}</router-link></li>
             </ul>
@@ -114,21 +114,232 @@ function close() {
 .mobile-drawer-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(37, 38, 46, 0.6);
-  backdrop-filter: blur(2px);
+  background: rgba(15, 17, 23, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   z-index: 1050;
   display: flex;
 }
 
 .mobile-drawer {
-  width: 310px;
+  width: 320px;
   max-width: 85vw;
-  height: 100%;
+  height: 100vh;
   background: var(--color-white);
   display: flex;
   flex-direction: column;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 1060;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.drawer-logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.drawer-logo {
+  height: 40px;
+  max-width: 180px;
+  object-fit: contain;
+}
+
+.close-btn {
+  background: var(--color-off-white);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-charcoal);
+
+  &:hover {
+    background: var(--color-beige);
+  }
+}
+
+.drawer-slogan {
+  background: var(--color-primary-subtle);
+  padding: 10px 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.drawer-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  flex: 1;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mobile-lang-switcher {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--color-off-white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.lang-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+
+  svg {
+    color: var(--color-primary);
+  }
+}
+
+.lang-toggle-btns {
+  display: flex;
+  gap: 6px;
+}
+
+.lang-pill {
+  padding: 5px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background: var(--color-white);
+  color: var(--color-charcoal);
+  cursor: pointer;
+  transition: var(--transition-fast);
+
+  &.active {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+  }
+}
+
+.group-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-taupe);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 0.04em;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+
+  li a {
+    display: block;
+    padding: 11px 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-charcoal);
+    border-bottom: 1px solid var(--color-border);
+    transition: var(--transition-fast);
+
+    &:hover {
+      color: var(--color-primary);
+      padding-left: 6px;
+    }
+  }
+}
+
+.user-quick-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.quick-link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  background: var(--color-off-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  position: relative;
+
+  &:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+}
+
+.badge-count {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: var(--color-accent);
+  color: white;
+  font-size: 0.7rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drawer-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--color-taupe);
+}
+
+.drawer-enter-active,
+.drawer-leave-active {
+  transition: opacity 0.3s ease;
+
+  .mobile-drawer {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+.drawer-enter-from,
+.drawer-leave-to {
+  opacity: 0;
+
+  .mobile-drawer {
+    transform: translateX(-100%);
+  }
 }
 
 .drawer-header {
