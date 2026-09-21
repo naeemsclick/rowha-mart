@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rowha Mart | Fashion • Gadgets • Beauty</title>
     <meta name="description" content="Rowha Mart - Small Choices Make a Brighter You. Shop premium Fashion, Smart Gadgets, and Beauty & Care essentials online." />
+    <meta name="keywords" content="Rowha Mart, rowhamart, Rowha Mart Bangladesh, fashion online shop, smart gadgets BD, beauty products Bangladesh, rowhamart.pages.dev" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://rowhamart.pages.dev/" />
     
     <!-- Google Fonts: Outfit & Plus Jakarta Sans for Modern Luxury Brand Typography + Noto Sans Bengali -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,10 +34,54 @@
     <meta name="twitter:title" content="Rowha Mart | Small Choices Make a Brighter You." />
     <meta name="twitter:description" content="Shop curated Fashion, Smart Gadgets, and Beauty & Care essentials online." />
     <meta name="twitter:image" content="https://rowhamart.pages.dev/og-share-banner.jpg" />
+
+    <!-- Structured Data (JSON-LD) for Google Search Engine Optimization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "OnlineStore",
+          "@id": "https://rowhamart.pages.dev/#store",
+          "name": "Rowha Mart",
+          "alternateName": ["RowhaMart", "Rowha Mart Bangladesh"],
+          "url": "https://rowhamart.pages.dev/",
+          "logo": "https://rowhamart.pages.dev/images/logo.png",
+          "image": "https://rowhamart.pages.dev/og-share-banner.jpg",
+          "slogan": "Small Choices Make a Brighter You.",
+          "description": "Rowha Mart is a premier curated e-commerce destination in Bangladesh offering Fashion, Smart Gadgets, and Beauty & Care essentials.",
+          "telephone": "+8801410740844",
+          "email": "support@rowhamart.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Dhaka",
+            "addressCountry": "BD"
+          },
+          "priceRange": "৳৳"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://rowhamart.pages.dev/#website",
+          "url": "https://rowhamart.pages.dev/",
+          "name": "Rowha Mart",
+          "description": "Small Choices Make a Brighter You.",
+          "publisher": {
+            "@id": "https://rowhamart.pages.dev/#store"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://rowhamart.pages.dev/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
+
 

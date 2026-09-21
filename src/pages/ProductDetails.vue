@@ -48,14 +48,20 @@ watch(
       quantity.value = 1;
       selectedColor.value = newProd.colors?.[0] || '';
       selectedSize.value = newProd.sizes?.[0] || '';
+      const prodImg = newProd.images[0]?.startsWith('http')
+        ? newProd.images[0]
+        : `https://rowhamart.pages.dev${newProd.images[0]}`;
       useSeo({
         title: newProd.name,
-        description: newProd.shortDescription || newProd.description
+        description: newProd.shortDescription || newProd.description,
+        image: prodImg,
+        url: `https://rowhamart.pages.dev/product/${newProd.slug}`
       });
     }
   },
   { immediate: true }
 );
+
 
 function handleAddToCart() {
   if (!product.value) return;
