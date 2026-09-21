@@ -1,0 +1,59 @@
+@import './variables';
+@import './typography';
+@import './utilities';
+
+/* Reset & Normalization */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+img, video, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Swiper custom styling overrides */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--color-primary) !important;
+  width: 24px !important;
+  border-radius: 4px !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--color-charcoal) !important;
+  background: rgba(255, 255, 255, 0.85);
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50%;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-fast);
+
+  &::after {
+    font-size: 18px !important;
+    font-weight: bold;
+  }
+
+  &:hover {
+    background: var(--color-primary);
+    color: var(--color-white) !important;
+  }
+}
